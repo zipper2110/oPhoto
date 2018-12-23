@@ -1,77 +1,18 @@
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { HomeComponent } from './components/screens/home-component';
+import { ShareWhoComponent } from './components/screens/share-who-component';
+import { RegisterComponent } from './components/screens/register-component';
+import { ShareComponent } from './components/screens/share-component';
 
-export default class App extends React.Component {
+const AppNavigator = createStackNavigator({
+  Home: HomeComponent,
+  ShareWho: ShareWhoComponent,
+  Share: ShareComponent,
+  Look: RegisterComponent
+},
+  {
+    initialRouteName: 'Home'
+  }  
+);
 
-constructor(props) {
-  super(props);
-  this.state = { clickedButton: "none" };
-}
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>What do you want?</Text>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            buttonStyle={styles.button}
-            onPress={() => {this.onPressTranslate()}}>
-              <Text style={styles.button}>Share</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            buttonStyle={styles.button}
-            onPress={() => {this.onPressLook()}}>
-            <Text style={styles.button}>Look</Text>
-          </TouchableOpacity>
-        </View>
-        {/*<Text>Button clicked: {this.state.clickedButton}</Text>*/}
-      </View>
-    );
-  }
-
-  onPressTranslate() {
-    this.clickButton("Translate");
-  }
-
-  onPressLook() {
-    this.clickButton("Look");
-  }
-
-  clickButton(buttonName) {
-    this.setState({clickedButton: buttonName});
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap'
-  },
-  text: {
-    fontSize: 26,
-    color: 'black',
-    fontWeight: '600',
-    marginBottom: 40
-  },
-  button: {
-    width: 120,
-    color: '#9c8762',
-    fontSize: 24,
-    fontWeight: '600',
-    textAlign: 'center',
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    margin: 10,
-    borderWidth: 4,
-    borderStyle: 'solid',
-    borderColor: '#9c8762'
-  }
-});
+export default App = createAppContainer(AppNavigator);
