@@ -1,0 +1,47 @@
+Arguments: 
+  /Users/dariagorskikh/.nvm/versions/node/v11.9.0/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js
+
+PATH: 
+  /Users/dariagorskikh/.pyenv/plugins/pyenv-virtualenv/shims:/Users/dariagorskikh/.pyenv/shims:/Users/dariagorskikh/.nvm/versions/node/v11.9.0/bin:/usr/local/bin:/Library/PostgreSQL/10/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/dariagorskikh/.pyenv/plugins/pyenv-virtualenv/shims:/Users/dariagorskikh/.pyenv/shims:/Library/PostgreSQL/10/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  11.9.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND nexus.bank24.int nexus.bank24.int:80
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:58:26)
+
+npm manifest: 
+  {
+    "name": "ophoto",
+    "version": "0.0.1",
+    "main": "node_modules/expo/AppEntry.js",
+    "private": true,
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "expo": "31.0.2",
+      "react": "16.5.0",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+      "react-navigation": "^3.0.9"
+    },
+    "devDependencies": {
+      "babel-preset-expo": "5.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

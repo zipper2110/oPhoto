@@ -29,7 +29,7 @@ export class HomeComponent extends React.Component {
     }
   
     onPressTranslate() {
-      this.props.navigation.navigate('ShareWho')
+      this.props.navigation.navigate('Share')
     }
   
     onPressLook() {
