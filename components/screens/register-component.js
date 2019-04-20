@@ -1,23 +1,24 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, TextInput } from 'react-native';
+import {apiService} from "../../services/api.service";
 
 export class RegisterComponent extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            text: ''
+          name: ''
         };
     }
 
     render() {
         return (
             <View>
-                <Text>Choose who</Text>
+                <Text>Enter your nickname:</Text>
                 <TextInput
                     style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-                    onChangeText={(text) => this.setState({ text })}
-                    value={this.state.text}
+                    onChangeText={(name) => this.setState({ name })}
+                    value={this.state.name}
                 />
                 <TouchableOpacity onPress={() => { this.onRegister() }}>
                     <Text>OK</Text>
@@ -27,6 +28,9 @@ export class RegisterComponent extends React.Component {
     }
 
     onRegister() {
+      apiService.registerSubscriber(this.state.name, 100, 100).then(response => {
+        apiService.subscriberId = response.id;
         this.props.navigation.navigate('WaitingConnection');
+      });
     }
 }
